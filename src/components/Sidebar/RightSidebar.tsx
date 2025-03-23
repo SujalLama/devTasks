@@ -12,8 +12,7 @@ import { ProgressBar } from "@progress/kendo-react-progressbars";
 
 export function RightSidebar() {
   const [visibleDialog, setVisibleDialog] = useState<boolean>(false);
-  const { tasks,  addTask, selectedProject } =
-    useTaskAndProjectContext();
+  const { tasks, addTask, selectedProject } = useTaskAndProjectContext();
 
   const { showToast } = useToast();
 
@@ -109,7 +108,13 @@ export function RightSidebar() {
 function TaskItem({ name, id, completed }: Task) {
   const { updateTask } = useTaskAndProjectContext();
   return (
-    <li style={{ color: completed ? "red" : "" }}>
+    <li
+      style={{
+        color: completed ? "red" : "",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Checkbox
         value={completed}
         onChange={(e) => {
@@ -120,7 +125,7 @@ function TaskItem({ name, id, completed }: Task) {
           }
         }}
       />
-      {name}
+      <Typography.p style={{ margin: "0" }}>{name}</Typography.p>
     </li>
   );
 }
