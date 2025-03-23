@@ -58,18 +58,15 @@ const TaskAndProjectContext = createContext(initialTaskAndProject);
 
 export function TaskAndProjectProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>(() =>
-    JSON.parse(localStorage.getItem("tasks") ?? "[]"),
+    JSON.parse(localStorage.getItem("tasks") ?? JSON.stringify([])),
   );
   const [projects, setProjects] = useState<Project[]>(() =>
-    JSON.parse(localStorage.getItem("projects") ?? "[]"),
+    JSON.parse(localStorage.getItem("projects") ?? JSON.stringify([])),
   );
   const [projectCategories, setProjectCategories] = useState<string[]>(() =>
     JSON.parse(
       localStorage.getItem("projectCategories") ??
-        `[
-        "uncategorized",
-        "favorites",
-        ]`,
+        JSON.stringify(["uncategorized", "favorites"]),
     ),
   );
   const [selectedProject, setSelectedProject] = useState(0);
