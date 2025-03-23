@@ -12,7 +12,7 @@ import { ProgressBar } from "@progress/kendo-react-progressbars";
 
 export function RightSidebar() {
   const [visibleDialog, setVisibleDialog] = useState<boolean>(false);
-  const { tasks, projects, addTask, selectedProject } =
+  const { tasks,  addTask, selectedProject } =
     useTaskAndProjectContext();
 
   const { showToast } = useToast();

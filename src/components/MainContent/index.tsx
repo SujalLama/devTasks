@@ -1,6 +1,5 @@
 import "./main.css";
-import { Input } from "@progress/kendo-react-inputs";
-import { Dialog } from "@progress/kendo-react-dialogs";
+
 import { heartIcon } from "@progress/kendo-svg-icons";
 import { Button } from "@progress/kendo-react-buttons";
 import {
@@ -22,7 +21,6 @@ import {
 } from "../../Providers/TaskAndProjectProjectProvider";
 import { ProjectAddEdit } from "../ProjectAddEdit";
 import { Checkbox } from "@progress/kendo-react-inputs";
-import { useToast } from "../../Providers/ToastProvider";
 
 export function MainContent() {
   return (

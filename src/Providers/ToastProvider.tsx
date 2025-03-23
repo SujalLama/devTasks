@@ -2,7 +2,7 @@ import {
   createContext,
   ReactNode,
   useContext,
-  useEffect,
+  
   useState,
 } from "react";
 import {
@@ -10,7 +10,7 @@ import {
   NotificationGroup,
 } from "@progress/kendo-react-notification";
 import { Fade } from "@progress/kendo-react-animation";
-import { Typography } from "@progress/kendo-react-common";
+
 type ToastConfig = {
   type: "error" | "success" | "info";
   title?: string;

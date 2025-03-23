@@ -2,7 +2,6 @@ import { Button } from "@progress/kendo-react-buttons";
 import { Input } from "@progress/kendo-react-inputs";
 import { Dialog } from "@progress/kendo-react-dialogs";
 import { useState } from "react";
-import { Task } from "../../Providers/TaskAndProjectProjectProvider";
 import { useToast } from "../../Providers/ToastProvider";
 
 export function TaskAddEdit({
@@ -14,7 +13,7 @@ export function TaskAddEdit({
   onClose: () => void;
   onSave: (name: string) => void;
 }) {
-  const [newTask, setNewTask] = useState<Task>();
+  const [newTask, setNewTask] = useState('');
   const buttonName = name ? "Update" : "Add";
   const { showToast } = useToast();
 
@@ -22,14 +21,19 @@ export function TaskAddEdit({
     <Dialog title={"Create tasks"} onClose={onClose} closeIcon={true}>
       <Input
         placeholder="Task name"
-        value={newTask?.name ?? ""}
-        onChange={(e) => setNewTask({ name: e.target.value ?? "" })}
+        value={newTask}
+        onChange={(e) => {
+          const text = e.target.value as string ;
+setNewTask(text)
+        
+        }
+        } 
         style={{ marginBottom: 10, width: "100%" }}
       />
       <Button
         themeColor="primary"
         onClick={() => {
-          if (!newTask?.name) {
+          if (!newTask) {
             showToast({
               autoHide: true,
               title: "Task Error:",
@@ -38,7 +42,7 @@ export function TaskAddEdit({
             });
             return;
           }
-          onSave(newTask.name);
+          onSave(newTask);
         }}
         style={{ marginBottom: 20 }}
       >

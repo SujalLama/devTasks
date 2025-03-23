@@ -52,7 +52,12 @@ export function ProjectAddEdit({
           <Input
             placeholder="Category name"
             value={newCategory}
-            onChange={(e) => setNewCategory(e.target.value ?? "")}
+            onChange={(e) => {
+              const text = e.target.value as string;
+              if(text) {
+                setNewCategory(text)
+              }
+            }}
             style={{ marginBottom: 10, width: "100%" }}
           />
           <Button
@@ -85,7 +90,14 @@ export function ProjectAddEdit({
           <Input
             value={newProject?.name ?? ""}
             onChange={(e) =>
-              setNewProject({ ...newProject, name: e.target.value })
+            {
+              const text = e.target.value as string;
+              if(text) {
+                
+                setNewProject({ ...newProject, name: text })
+              }
+            }
+             
             }
             style={{ marginBottom: 10, width: "100%" }}
           />
