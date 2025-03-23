@@ -1,0 +1,54 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.home-container {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+  height: 90%;
+  flex: 1;
+}
+
+.home-container__left {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.home-container__left--inner {
+  background: #ddd;
+  border-radius: 6px;
+  height: 100%;
+}
+
+.home-container__right {
+  width: 300px;
+  border-width: 20px;
+
+  border-left-width: 1px;
+  border-left-color: var(--kendo-color-border, rgba(0, 0, 0, 0.12));
+  border-left-style: solid;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.k-animation-container-relative {
+  display: block;
+}
+
+.k-card {
+  display: flex;
+  margin: 10px;
+  width: calc(33.33% - 20px);
+}
+
+.tab-wrapper {
+  flex: 1;
+}

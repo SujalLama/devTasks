@@ -1,0 +1,35 @@
+.title {
+  padding: 20px;
+}
+
+.page {
+  padding: 10px;
+}
+
+.page ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.page li {
+  font-size: 1.2em;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  border-color: rgba(33, 37, 41, 0.125);
+  border-style: solid;
+  line-height: 1.5em;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page li:last-child {
+  border: 0;
+}
+
+.k-drawer-push {
+  height: 100%;
+}
